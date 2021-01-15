@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+	<definition name="baseLayout" template="/WEB-INF/view/common/template.jsp">
+		<put-attribute name="title" value="조기요 - 즐거움은 조기요부터"/>
+		<put-attribute name="menu" value="/WEB-INF/view/common/menu.jsp"/>
+		<put-attribute name="body" value=""/>
+	</definition>
+	
+	<definition name="memberLayout" template="/WEB-INF/view/member/memberTemplate.jsp">
+		<put-attribute name="title" value="조기요 - 즐거움은 조기요부터"/>
+		<put-attribute name="menu" value="/WEB-INF/view/common/menu.jsp"/>
+		<put-attribute name="side" value="/WEB-INF/view/member/side.jsp"/>
+		<put-attribute name="content" value=""/>
+	</definition>
+
+<!--관리자 탬플레이트-->
+	<definition name="adminLayout" template="/WEB-INF/view/admin/adminTemplate.jsp">
+		<put-attribute name="title" value="조기요 - 즐거움은 조기요부터"/>
+		<put-attribute name="menu" value="/WEB-INF/view/common/menu.jsp"/>
+		<put-attribute name="side" value="/WEB-INF/view/admin/side.jsp"/>
+		<put-attribute name="content" value=""/>
+	</definition>
+	
+	<definition name="sample/*" extends="baseLayout">
+		<put-attribute name="body" value="/WEB-INF/view/sample/{1}.jsp" />
+	</definition>
+	
+	<definition name="home/*" extends="baseLayout">
+		<put-attribute name="body" value="/WEB-INF/view/home/{1}.jsp" />
+	</definition>
+
+	<definition name="member/*" extends="memberLayout">
+		<put-attribute name="content" value="/WEB-INF/view/member/{1}.jsp" />
+	</definition>
+
+<!-- 관리자 탬플레이트 -->	
+	<definition name="admin/*" extends="adminLayout">
+		<put-attribute name="content" value="/WEB-INF/view/admin/{1}.jsp" />
+	</definition>
+</tiles-definitions>
+
+
+
+
+
+
+
+
+
